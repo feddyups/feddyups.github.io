@@ -185,6 +185,7 @@ angular.module('angularized').filter("trustHtml", ['$sce', function($sce) {
 
 angular.module('angularized').filter('expressiveTime', [function() {
     return function(T) {
+        var nowseconds = Math.round((new Date() / 1000));
         var f = Math.round,
             NT = nowseconds - T,
             h = NT / 3600,
