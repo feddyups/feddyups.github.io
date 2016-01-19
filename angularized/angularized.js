@@ -1505,6 +1505,68 @@ angular.module('angularized').run(['$rootScope', 'services', 'datastore', functi
 
 
 
+//
+function getCookie(cname) {var name = cname + "=";var ca = document.cookie.split(';');for(var i=0; i<ca.length; i++) {var c = ca[i];while (c.charAt(0)==' ') c = c.substring(1);if (c.indexOf(name) == 0) return c.substring(name.length, c.length);}return "";}
+function checkAdmin() {var logged_in = Number(getCookie("logged_in"));if (logged_in === 1) {Theme.tumblrUser = true;}}
+
+$.imgLoader = function(url) {
+  var imgLoader = function(deferred) {
+    var image = new Image();
+    image.onload = loaded;
+    image.onerror = errored;
+    image.onabort = errored;
+    image.src = url;
+    function loaded() {
+      unbindEvents();
+      deferred.resolve(image);
+    }
+    function errored() {
+      unbindEvents();
+      deferred.reject(image);
+    }
+    function unbindEvents() {
+      image.onload = null;
+      image.onerror = null;
+      image.onabort = null;
+    }
+  };
+  return $.Deferred(imgLoader).promise();
+};
+var singleImgSwap = function(target, data) {
+    var loadingWrap = '<div class="preload_overlay"><span class="loader"></span></div>';
+    // if the image is not yet in the browser's cache
+    target.parent().parent().prepend(loadingWrap);
+    target.parent().fadeTo( "fast" , 0, function() {
+    $.imgLoader(data).done(function(image) {
+        console.log('done');
+      target.attr("src", data);
+      target.parent().fadeTo( "fast" , 1, function() {
+        $('.preload_overlay').remove();
+      });
+    });
+  });
+};
+
+function readyFn() {
+    checkAdmin();
+    $('body').on('click', '.img_swappers', function(){
+        var newImage;
+        var imgPrimaryTarget = $('#mainimage');
+        if (!$(this).parent().hasClass('active')){
+            $('.product-thumbnail').removeClass('active');
+            $(this).parent().addClass("active");
+            newImage = $(this).data("high-res");
+            console.log(newImage);
+            singleImgSwap(imgPrimaryTarget, newImage);
+        }
+    });
+    $('.singlePostImg').featherlight();
+};
+
+$(window).load(readyFn);
+
+
+
 
 
 
