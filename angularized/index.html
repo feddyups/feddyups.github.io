@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <title>Angularized Help Documentation</title>
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    
+    <link href='fontello/css/fontello.css' rel='stylesheet' type='text/css'>
+    
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    
+    <style>
+    
+    	@media only screen and (max-width: 1024px) {
+    		#wrapper {padding: 0 30px;}
+    		#wrapper header {padding: 50px 0 0 0; border-bottom: 0; margin-bottom: 0;}
+    		#content {width: auto !important;}
+    		nav {width: 100% !important; margin-top: 50px !important;}
+    		#wrapper nav ul li {display: block;}
+    	}
+    	
+    	@media all and (min-width: 1024px) {
+    		#wrapper {width: 960px;}
+    	}
+    
+		body { color: #666; font-family: 'Open Sans', sans-serif; margin: 0;}
+		article, aside, figure, footer, header, hgroup, menu, nav, section { display:block;}
+		
+		h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', sans-serif; font-weight: normal;}
+		h1 {font-size: 30px; text-transform: uppercase;}
+		h2 {margin-top: 50px;}
+		h2.no_margin {margin-top: 0;}
+		a {color: #E42F37; border-bottom: 1px dashed #E42F37; text-decoration: none;}
+		a:hover {color: black; border-bottom: 1px dashed #000; }
+		p {margin-bottom: 20px;}
+		hr {color: #f6f6f6; background-color: #f6f6f6; height: 1px; border: none; margin: 100px 0;}
+		ul {list-style: none; padding: 0; margin: 0;}
+		table {width: 100%; margin-bottom: 40px;}
+		th {background-color: #E42F37; padding: 5px; color: white; font-weight: normal;	}
+		td {padding: 5px; margin: 0; border: #ccc; background-color: #f6f6f6;}
+		
+		#wrapper {margin: 0 auto; padding-bottom: 50px;}
+		
+		header {text-align: center; margin-bottom: 50px; padding: 100px 0; border-bottom: 1px solid #f6f6f6;}
+		section {word-wrap: break-word;}
+		article img {width: 100%; border: 1px solid #333;}
+		article ul li {margin-bottom: 20px;}
+		
+		#theme {
+			margin: 0 auto;
+			color: white;
+			margin-bottom: 20px;
+			text-align: center;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			background-image: url('images/AngularISED.png');
+			 height: 125px;
+		}
+		#theme_icon {height: 100px; width: 100px; margin: 0 auto;}
+		#theme h1 {margin-top: 10px;}
+		
+		nav {margin: 20px 0 50px 0; text-align: center;}
+		nav ul {padding: 0; margin: 0; list-style: none;}
+		nav ul li {margin: 10px 10px; display: inline;}
+		.sub_nav {margin: 20px 0 40px 0;}
+		.sub_nav li {display: inline-block; margin-right: 20px;}
+		#content {margin-bottom: 100px; border-top: 1px solid #f6f6f6; padding-top: 100px;}
+		footer {text-align: center; font-size: 0.8em; color: #ccc; padding: 30px 0; border-top: 1px solid #f6f6f6;}
+		footer p {margin-bottom: 10px;}
+		
+		#changelog h4 {margin-top: 50px;}
+		#changelog ul li {margin-bottom: 10px;}
+		.truesize {
+		    display: inline-block;
+		    margin: 0 auto;
+		    max-width: 100%;
+		    text-align: center;
+		    width: auto;
+		}
+		#scroll_top a {
+			background-color: #E42F37;
+			color: white;
+			text-align: center;
+			padding: 10px 0;
+			z-index: 100;
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			display: block;
+		}
+		#scroll_top a:hover {
+			background-color: black;
+		}
+		
+		.new, .fix, .delete, .update {
+			color: white; 
+			padding: 3px 7px; 
+			margin-right: 5px; 
+			font-size: 10px;
+			width: 40px;
+			display: inline-block;
+			text-transform: uppercase;
+			border-radius: 5px;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			text-align: center;
+		}
+		.new {background-color: #7AB317;}
+		.fix {background-color: #F38630;}
+		.delete {background-color: #B11623;}
+		.update {background-color: #26ADE4;}
+      
+      
+    </style>
+  </head>
+  
+<body>
+ 	<div id="wrapper">
+	  	<header>
+	  		<div id="theme"></div>
+	  		<h1>Angularized Help Documentation</h1>
+	  	</header>
+	  	
+	    <nav>
+	    	<ul>
+	      		<li><a href="#intro">Introduction</a></li>
+	      		<li><a href="#installation">Installation</a></li>
+	      		<li><a href="#basic_set_up">Basic Configuration</a></li>
+	      		<li><a href="#navigation">Navigation</a></li>
+	      		<li><a href="#hero_panel">The Hero Panel</a></li>
+	      		<li><a href="#featured_panel">The Featured Panel</a></li>
+	      		<li><a href="#article_aggregator">The Article Aggregator</a></li>
+	      		<li><a href="#mobile">Mobile View</a></li>
+	      		<li><a href="#options">Theme Options</a></li>
+	      		<li><a href="#changelog">Changelog</a></li>
+	      		<li><a href="#rating">Rating</a></li>
+	      		<li><a href="#support">Support</a></li>
+	    	</ul>
+	    </nav>
+	    
+	    <div id="content">
+		    <article id="intro">
+		      <hgroup>
+		        <h1>Introduction</h1>
+		        <h2 class="no_margin">Thank you!</h2>
+		      </hgroup>
+		      <section>
+		        <p>Thank you for purchasing the Angularized Tumblr theme. I hope the theme serves you finely in building your new website or giving a new look to your existing one! </p>
+		      </section>
+		      
+		      <h2>About Angularized</h2>
+		      <section>
+		      	<p>The Angularized theme can be installed on any Tumblr-driven Website. It makes use of the Tumblr API  for crunching its data, and is built on the popular AngularJS framework, delivering a beautiful , fast-loading and unique user experience without the need for a browser refresh between one Post and the other. </p>
+		      	<p>The theme also enhances your normal Tumblr Blog with some <b>unique features</b> like <ul><li>A Full Navigation Menu
+		      	</li><li>A Configurable "Hero Panel" for your Home Page.</li><li>The ability to correlate different Posts, based on the tags they are marked with</li><li>Capturing and sending out data from a fully customized Form to your Inbox</li><li>Inserting a Call to Action prompt to each of your Posts effortlessly</li></ul></p>
+		      	<p>Last but not least, the Angularized theme integrates seamlessly with services such as Mailchimp and Disqus</p>
+		      	<p>A great template for Artisans and Artists selling their products online, fashion or food bloggers!</p>
+		      </section>
+		    </article>
+		    <hr></hr>
+		    
+		    <article id="installation">
+			  <h1>Installation</h1>
+
+			  <ul class="sub_nav">
+				  	<li><a href="#install">Installing the HTML source</a></li>
+				  	<li><a href="#install_vendors">Installing the Vendors Javascript source</a></li>
+				  	<li><a href="#install_core">Installing the Core Javascript source</a></li>
+				  	<li><a href="#install_css">Installing the CSS source</a></li>
+				</ul>
+
+		      <h2 id="install" class="no_margin">Installing the Angularized theme</h2>
+		      <section>
+		        <p>Now you've got your new Tumblr theme you'll want to install it right away!</p>
+		        <p>Unzip your download folder and locate the <strong>Angularized.html</strong> file, it will be in the root of the folder.</p> 
+		        <p>Open that in your favourite text editor. <atrong>Don't open it in a web browser as it will look a mess</atrong>. Instead right click and select Open... I use <a href="http://www.sublimetext.com/" target="_blank">Sublime Text 3</a> for the Mac. But there are free programs such as <a href="http://www.barebones.com/products/textwrangler/" target="_blank">TextWrangler</a> for Mac and <a href="http://notepad-plus-plus.org/" target="_blank">Notepad++</a> for PC. Every PC comes with NotePad installed for free as well. If you've opened up the HTML file in TextEdit it may have messed it up completely. Bad times. If you follow this guide: <a href="http://support.apple.com/kb/TA20406" target="_blank">http://support.apple.com/kb/TA20406</a>. It'll show you how to open HTML files properly within TextEdit.</p>
+		        <p>Now you've got the file open, select everything within it either by dragging your cursor from the beginning of the first line all the way to the bottom, or by pressing CMD + A (Mac) or CTRL + A (PC). Now copy all of that selected code by going to Edit then clicking Copy or by pressing CMD + C (Mac), CTRL + C (PC). That code is now stored on your clipboard.</p>
+		        
+		        <h2 id="the_customise_screen">The Customise Screen and the HTML Editor</h2>
+		        <p>Log into your <a href="http://www.tumblr.com/dashboard" target="_blank">Tumblr Dashboard</a>, then click on the <strong>Account icon</strong> at the very top of the site, then click on the <strong>"Settings"</strong> option.</p>        
+		        <img src="images/settings.jpg" />		        
+		        <p>Now select the blog you would like to install the theme on from the list on the right.</p>
+		        <img src="images/select_blog.jpg" />
+		        <p>Now click on the "Edit theme" button.This opens up <strong>Tumblr's Customise Screen</strong>. Pressing "Edit HTML" will send you to <strong>Tumblr's HTML Editor</strong>.</p>
+		        <img src="images/customise_theme.jpg" />
+		        <p>Delete all the code in this area.</p>
+		        <p>Now go ahead and paste in the new code. CMD + V (Mac) or CTRL + V (PC) will paste in the code quicker than a flash. Or you can go up to the Edit menu item and click on Paste. Either way works fine.</p>
+		        <img src="images/theme_html.jpg" />
+		        <p>Now hit the Update Preview button. You'll notice the preview on the right updates with your new theme.</p>
+		        <p><b>Now take note, </b>the Preview of the theme will ALWAYS look weird; this is NORMAL, as the theme is using the Tumblr API as its engine, along with the angular Framework. The Tumblr Preview will not be able to really show all that, but <b>your theme will still look perfect through its normal URL</b>.</p><p>So go ahead and hit the green "Update Preview" button and then click the blue "Save" button. Refresh this page now (F5 or right click and click Reload / Refresh). Now your new themes options have loaded in. You'll need to set some of the most basic options before checking out your brand new website so patience!!! </p>
+		        <p>Now you can head on to the <a href="#basic_set_up">Set Up</a> area of this document to find out how to make your theme look the way you want.</p>
+
+		        <h2 id="install_vendors">Uploading the Vendors Javascript file</h2>
+		        <p>Unzip your download folder and locate the <strong>angularized_vendors.js</strong> file, it will be in the root of the folder.</p> 
+		        <p>This file contains all the third party libraries and scripts used by the Angularized theme. By default, this file can be retrieved by <a href="http://feddyups.github.io/angularized/angularized_vendors.js">this location</a>, but you can upload it to your own server or to the Tumblr Repository, if you feel it's better for you. Otherwise, you don't need to do anything, as the theme will look for the file to its default location.</p>
+
+		        <h2 id="install_core">Installing the Core Javascript source</h2>
+		        <p>Unzip your download folder and locate the <strong>angularized.js</strong> file, it will be in the root of the folder.</p> 
+		        <p>This file contains all the Javascript directives used by the Angularized theme. By default, this file can be retrieved by <a href="http://feddyups.github.io/angularized/angularized/angularized.js">this location</a>, but you can upload it to your own server or to the Tumblr Repository, if you feel it's better for you. Otherwise, you don't need to do anything, as the theme will look for the file to its default location.</p>
+
+		        <h2 id="install_css">Installing the CSS source</h2>
+		        <p>Unzip your download folder and locate the <strong>angularized.css</strong> file, it will be in the root of the folder.</p> 
+		        <p>This file contains all the CSS styling used by the Angularized theme. By default, this file can be retrieved by <a href="http://feddyups.github.io/angularized/angularized.css">this location</a>, but you can upload it to your own server or to the Tumblr Repository, if you feel it's better for you. Otherwise, you don't need to do anything, as the theme will look for the file to its default location.</p>
+
+		        <p>Image displaying the options relative to the Sources needed for the Angular theme to work. (<a href="#vendors_meta"><strong>"Vendors Source"</strong></a>, <a href="#css_meta"><strong>"CSS source"</strong></a> and <a href="#core_meta"><strong>"Core Source"</strong></a> options)</p>
+		        <img class="truesize" src="images/install01.jpg">
+
+		      </section>
+		    </article>
+		    <hr></hr>
+		    
+		    <article id="basic_set_up">
+		      	<h1>Basic Configuration</h1>
+	 			<ul class="sub_nav">
+				  	<li><a href="#blog_address_info">Define the Content Source</a></li>
+				  	<li><a href="#logo_info">Logo</a></li>
+				  	<li><a href="#description_info">Description</a></li>
+				  	<li><a href="#back_to_store_info">Back to Store Button</a></li>
+				  	<li><a href="#cta_info">Call to Action Button</a></li>
+				  	<li><a href="#social_info">Social Share Buttons</a></li>
+				  	<li><a href="#disqus_info">Disqus Integration</a></li>
+				  	<li><a href="#mailchimp_info">MailChimp Integration</a></li>
+				</ul>
+
+		      	<h2 id="blog_address_info">Define The Content Source :  Native or External</h2>
+		      	<section>
+			      	<p>The Angularized theme is the very first of its kind, using the tumblr API for delivering content.</p>
+			      	<p>This means that you can practically <b>use ANY tumblr Blog out there, and serve it through a new web address.</b></p>
+			      	<p>It sounds a bit hard to grasp in the beginning, but it is a concept with infinite possibilities. As an example and proof of concept, you can check how <a target="_blank" href="http://angularized.tumblr.com/">the Demo Tumblr for Angularized theme</a> is set: The content you see up there is actually using the content uploaded to the famous <a target="_blank" href="http://scipsy.tumblr.com/">Scipsy Blog</a>.</p>
+			      	<p>You can define the Content Source by inserting a Tumblr address on the <a href="#blog_address">"Blog address" option</a> of the Angularized theme.</p>
+			      	<p><img class="truesize" src="images/blog_address.jpg"></p> <p>If you intend to use a "Native" Content source, then simply fill the <a href="#blog_address">"Blog address" option</a> with the URL of the blog you're installing the theme onto (ommit the 'http://' prefix).</p>
+		      	</section>
+
+		      	<h2 id="logo_info">Upload a Logo</h2>
+		      	<section>
+		      		<p>That's an easy one, just use the <strong>"Logo"</strong>, <strong>"Logo Alt"</strong> and <strong>"Logo Height"</strong> To configure your site's logo.</p>
+		      		<p>Tip: For best performance, upload an image that has the double height of the one you will set in the "Logo Height" option. (For an image of natural height of 128px, set the "Logo Height" option to "64px". This will make sure your logo will show great on Retina screens (2X images)</p>
+		      		<img class="truesize" src="images/logomark.png">
+		      	</section>
+
+		      	<h2 id="description_info">Description</h2>
+		      	<section>
+		      		<p>If you have chosen to show the Description of your blog, then it will show on the Grey bar right on the top of the Interface</p>
+		      		<img class="truesize" src="images/logomark.png">
+		      	</section>
+
+		      	<h2 id="back_to_store_info">Back to Store Button</h2>
+		      	<section>
+		      		<p>A great way to connect your blog to your e-commerce site, or an external link with which you or your business is somehow connected. All you need to do is configure the <a href="#backtostoreText_meta"><strong>"Back to Store Text"</strong></a> option and the <a href="#backtostoreLink_meta"><strong>"Back to Store Link"</strong></a> option!</p>
+		      	</section>
+
+		      	<p>Image showing both the "Description" and "Back to Store" Options</p>
+		      	<img src="images/desc_back.jpg">
+
+		      	<h2 id="cta_info">Call to Action Button</h2>
+		      	<section>
+		      		<p>This is a great way to prompt the user's actions while reading a Post, as the button will tease the user to perform an action you can define through the use of the <a href="#calltoActionText_meta"><strong>"Call to Action Text"</strong></a> and <a href="#calltoActionLink_meta"><strong>"Call to Action Link"</strong></a> options of the theme. If you don't want to use this feature, just leave those fields empty! 
+		      		</p>
+		      		<img src="images/cta.jpg">
+		      	</section>
+
+		      	<h2 id="social_info">Social Share Buttons</h2>
+		      	<section>
+		      		<p>Use the Options called <strong><a href="#fb_meta">Facebook</a></strong>, <strong><a href="#ig_meta">Instagram</a></strong>, <strong><a href="#pint_meta">Pinterest</a></strong>, <strong><a href="#twitter_meta">Twitter</a></strong>, <strong><a href="#etsy_meta">Etsy</a></strong> for having your Social Profiles appear on the footer area of your site!
+		      		</p>
+		      	</section>
+
+		      	<h2 id="disqus_info">Disqus Integration</h2>
+		      	<section>
+		      		<p>To set up the commenting system on the posts permalink pages you will need to sign up to <a href="www.disqus.com" target="_blank">www.disqus.com</a>.</p>
+		        	<p>Once you've created your new blog settings there copy your disqus shortname and paste it into the theme options panel. (<a href="#disqus_meta"><strong>"Disqus"</strong> option</a>)</p>
+		      	</section>
+
+		      	<h2 id="mailchimp_info">MailChimp Integration</h2>
+		      	<p>Angularized provides an easy way to connect your own Mailchimp Newsletter list to the theme's footer. Here's how to activate the Mailchimp Newsletter input:</p>
+		      	<ol>
+		      		<li>Log into your Mailchimp Account</li>
+		      		<li>Click on "Lists" from the sidebar</li>
+		      		<li>Click on the list that you'd like connected with your Angularized tumblr</li>
+		      		<li>Click "Signup forms"</li>
+		      		<li>Select "Embedded forms"</li>
+		      		<li>Select "Naked"</li>
+		      	</ol>
+		      	<p>You now can obtain the following information from the form action attribute code:</p>
+		      	<ul>
+		      		<li>
+		      			<p>mailchimp.username - Your MailChimp username, immediately follows http://</p>
+		      			<p>Once you have that data, you can use the <a href="#mailchimp_usrname_meta">Mailchimp Username</a> option of the theme</p>
+		      		</li>
+		      		<li>
+		      			<p>mailchimp.dc - Your MailChimp distribution center, immediately follows your username</p>
+		      			<p>Once you have that data, you can use the <a href="#mailchimp_dc_meta">Mailchimp DC</a> option of the theme</p>
+		      		</li>
+		      		<li>
+		      			<p>mailchimp.u - Unique string that identifies your account.</p>
+		      			<p>Once you have that data, you can use the <a href="#mailchimp_usrhasg_meta">Mailchimp userHash</a> option of the theme</p>
+		      		<li>
+		      			<p>mailchimp.id - A unique string that identifies your list.</p>
+		      			<p>Once you have that data, you can use the <a href="#mailchimp_id_meta">Mailchimp ID</a> option of the theme</p>
+		      		</li>
+		      	</ul>
+
+		      	<p>Example::</p>
+		      	<p>< form action="http://username.us1.list-manage.com/subscribe/post?u=a9c2c3f4e3t6g7k8i0j0&amp;id=fkwb12" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate ></p>
+		      	<p>Result:</p>
+		      	<ul>
+		      		<li>Mailchimp Username - username</li>
+		      		<li>Mailchimp DC - us1</li>
+		      		<li>Mailchimp userHash - a9c2c3f4e3t6g7k8i0j0</li>
+		      		<li>Mailchimp ID - fkwb12</li>
+		      	</ul>
+
+
+
+
+
+		      	
+		      	<section>
+		      		<p></p>
+		      	</section>
+		    </article>
+		    <hr></hr>
+
+		    <article id="navigation">
+		    	<h1 id="nav_info">The Navigation Menu</h1>
+		    	<ul class="sub_nav">
+				  	<li><a href="#root_lvl_conf">Root Level Configuration</a></li>
+				  	<li><a href="#menu_item_00">The First Menu Item</a></li>
+				  	<li><a href="#menu_item_00-04">Menu Items 01 up to 04</a></li>
+				  	<li><a href="#menu_item_00-04">Menu Items 01 up to 04</a></li>
+				  	<li><a href="#menu_item_05">Menu Item 05</a></li>
+				  	<li><a href="#menu_item_06">Menu Item 06</a></li>
+			  	</ul>
+
+			  	<h2 class="no_margin">Configuring the Navigation-related Options</h2>
+		      	<section>
+			      	<p>Every Website needs a full-fledged Navigation Menu, and the Angularized theme has everything you could ever ask for!
+			      	The Navigation Menu in Angularised is a very unique feature, making use of Tumblr's Tags, Post Id's and Post Types for helping you organise and expose your Content.</p>
+			      	<p>During the following few paragraphs the Navigation Menu and its functionality is explained and analysed. Use the following guide for configuring and choosing the most suitable options for your own web site!</p>
+			      	<p>The Navigation Menu offers up to <b>seven main navigation Items</b>, named conveniently as:
+			      		<ul>
+			      			<li><b>Menu Item 00</b>: the first Navigation Item, on Root level.</br> This Menu Item is pretty special, enclosing the most Recent Post of your blog along with links for any of your Custom Pages and a link to the Ask Me Page.</li>
+			      			<li><b>Menu Item 01</b>: the second Navigation Item, on Root level. It can contain up to four Submenu Items.</li>
+			      			<li><b>Menu Item 02</b>: the third Navigation Item, on Root level. It can contain up to four Submenu Items.</li>
+			      			<li><b>Menu Item 03</b>: the fourth Navigation Item, on Root level. It can contain up to four Submenu Items.</li>
+			      			<li><b>Menu Item 04</b>: the fifth Navigation Item, on Root level. It can contain up to four Submenu Items.</li>
+			      			<li><b>Menu Item 05</b>: the sixth Navigation Item, on Root level. This is a Post-Type driven menu item. You can use this Menu Item to show the four latest Posts of your blog, taken by any of the available Tumblr Post Types you choose (Text, Photo, Quote, Link, Chat, Audio, Video or Answer).</li>
+			      			<li><b>Menu Item 06</b>: the seventh Navigation Item, on Root level: You can use this special Menu Item to show the four latest Posts of your blog that are marked with the tag you choose.</li>
+			      		</ul>
+			      	</p>
+			      	<p>The Menu is also available in a super cool fly-out off-canvas style for mobile Views as well!</p>
+		      	</section>
+
+		      	<h2 id="root_lvl_conf">Root Level Configuration</h2>
+		      	<section>
+			      	<p>You can choose to hide or display each one of the Root-level Navigation Items, by turning on or off the respective switches from the Tumblr Backend by using the <a href="#showmenu_meta"><strong>Show MenuItemXX</strong> </a>option switches [from 00 up to 06], marked with Red on the image below).</p>
+			      	<p>You can also set the Title for each menu Parent Item by using the <a href="#showmenu_parent_meta"><strong>MenuItemXX title0</strong></a> options [from 00 up to 06], marked with Yellow on the image below).</p>
+			      	<img id="main_menu_configuration" class="truesize" src="images/nav_01.jpg">
+			      	<p>The Navigation Items, as shown in the Front-End for the above Configuration. Note that <b>Menu Item 02</b> is hidden from view.</p>
+			      	<img class="truesize" src="images/nav_01-a.jpg">
+		     	</section>
+		      	
+		      	<h2 id="menu_item_00">The First Menu Item (MenuItem00)</h2>
+		      	<section>
+		      		<p>This Menu Item gives you the opportunity to create an overview of your business or personal profile. It is presented in the form of a "Mega Menu", combining the <a href="#recent_post">Most Recent Post</a> from your Tumblr Blog, <a href="#static_pages">your Static Pages</a>, and even <a href="#askme_page">a link to your "ask me" Page</a>.</p>
+		      	
+				    <h3 id="static_pages">How to create, configure and display the Static Pages</h3>
+				    <section>
+				    	<p>The first menu item of the navigation Panel (Menu Item 00 ) can help you to insert all of your Static Pages to your Navigation.</p>
+				      	<img src="images/nav_00-open.jpg">
+				      	<p>To create a custom page for your blog make sure that you are in the Customise screen. <a href="#the_customise_screen">Follow the steps above to get to the correct place.</a></p>				
+				      	<p>Scroll down on the theme options sidebar and you'll see an 'Pages' button. Click on this and then click on the 'Add a page' button.This then opens up the Add page pop up. Enter all the details you need for your new page. Here is an example:</p>
+				      	<img class="truesize" src="images/custom_page.jpg" />
+				      	<p>In order for it to work properly, you need to get all of your static pages under the '/static/anyname' format.For Adding the '/static/' to the URL of your page, simply edit the URL of that page, as seen on the photo below.</p>
+				      	<img class="truesize" src="images/nav_edit_page.jpg">
+				      	<p>When you're done adding the "/static/" suffix, activate the "Show a link to this Page", option and click the Save button. Your new page has now been created and a link has been automatically added to your main navigation menu.</p>
+			      	</section>
+		      	
+			      	<h3 id="askme_page">How to display the Ask Me Page</h3>
+			      	<section>
+				      	<p>The First Menu Item will also show a link to your ask me page, if you choose to enable this feature from your Tumblr Settings</p>
+				      	<img src="images/ask_me.jpg">
+			      	</section>
+
+			      	<h3 id="recent_post">The Most Recent Post</h3>
+			      	<section>
+			      		<p>Additionally, the First Menu Item will show the Most Recent Post of your Blog, just to keep it all fresh!</p>
+			      	</section>
+			    </section>
+
+		      	<h2 id="menu_item_01-04">Menu Items 01 up to 04 (MenuItem01 - 04)</h2>
+		      	<section>
+			      	<p> Each of those menu items can hold up to <a href="#menuparams">Four Sub Level Menu Items</a>. The Ones you leave empty, will simply not show on your navigation Menu. You can use those menus for "pinning" Posts you ALWAYS want to show to your viewers , using those posts as introductory pages for distinct categories and topics of your Blog. </p>
+			      	<p id="menu_item_01-04_params">Each Sublevel Menu Item has 3 Parameters : </p>
+			      	<ul>
+			      		<li>The <strong>ID</strong> of the Post it links to, <a href="#find_the_id_of_a_post">here's how to find the ID of a Post</a>.</li>
+			      		<li>The <strong>Title</strong> of the Menu Item, this can be anything you want.</li>
+			      		<li>The <strong>Tag</strong> of the menu item, for configuring the <a href="#active_tag">"active tag"</a> of the <a href="#article_aggregator">Article Aggegator</a> feature. For optimal performance, make sure that the Post you choose to link with the Menu Item contains the tag you are defining for this option.</li>
+			      	</ul>
+			      	<p>The image below conveys how the theme options are connected to the menu item titles.</p>
+			      	<img src="images/navparams.jpg">
+
+		      		<h3 id="find_the_id_of_a_post">How to find the ID of a Post</h3>
+		      		<section>
+			      		<p>From your <a href="http://www.tumblr.com/dashboard" target="_blank">Tumblr Dashboard</a>, click On the "Posts" under the Account Tab.</p>
+			      		<img class="truesize" src="images/find_post_id_00.jpg">
+			      		<p>Look for the Post you want to pin to the menu and hit the "clog" icon, then choose "Edit"</p>
+			      		<img class="truesize" src="images/find_post_id_01.jpg">
+			      		<p>Look your browser's address bar. After the last slash, you will not a sequence of numbers. This is the ID of the Post. Copy that sequence to the "MenuItemXX idX" option of the Angularized theme</p>
+			      		<img class="truesize" src="images/find_post_id_02.jpg">
+			      		<p>Check out the following configuration for <a target="_blank" href="http://angularized.tumblr.com/">the Demo Tumblr for Angularized theme</a>.Note that the Menu Items marked with :"MenuItem02 ...", are not being used, since <a href="#main_menu_configuration">we have chosen to hide the second Root Level Menu Item</a>.</p>
+			      		<img class="truesize" src="images/nav00-04.jpg">
+			      	</section>
+			    </section>
+
+			    <h2 id="menu_item_05">Menu Item 05 (MenuItem05)</h2>
+			    <section>
+			      	<p>This Menu automatically retreives the four most recent Post of any Type you will choose</p>
+			      	<p>Use the <a href="#menuitem05type"><strong>"MenuItem05 Type"</strong></a> Option for Configuring this. (You can type anything from "Text", "Photo", "Quote", "Link", "Chat", "Audio", "Video" or "Answer")</p>
+			      	<img class="truesize" src="images/nav_05.jpg">
+			    </section>
+
+		      	<h2 id="menu_item_06">Menu Item 06 (MenuItem06)</h2>
+		      	<section>
+			      	<p>This Menu automatically retreives the four most recent Post of any Tag you will choose</p>
+			      	<p>Use the <b>"MenuItem06 Tag"</b> Option for Configuring this. Check <a target="_blank" href="https://www.tumblr.com/docs/en/using_tags#how">here</a> if you want to learn how to tag your Posts.</p>
+			      	<img class="truesize" src="images/nav_06.jpg">
+			    </section>
+			</article>
+		    <hr></hr>
+
+		    <article id="hero_panel">
+		    	<h1>The Hero Panel</h1>
+		    	<section>
+		    		<p>The "Hero Panel" is the first visual your visitor will encounter on the site. Its purpose is to present an overview of the site's most important content.</p>
+			    	<p> The Hero Panel will display the most recent Photo Post Types or even Video Post Types marked with the specified tag. Check <a target="_blank" href="https://www.tumblr.com/docs/en/using_tags#how">here</a> if you want to learn how to tag your Posts.</p>
+			    	<p>The Theme will automatically calculate the best possible fit for your images, no matter what their dimensions will be!</p>
+			    	<p>The Hero Panel will show only on the Home Page of your site while it is hidden from view on mobile views to save up valuable screen real-estate space!</p>
+			    	<p> Setting the Hero Panel related options in the back-end of Tumblr: <a target="_blank" href="http://angularized.tumblr.com/">The Demo Tumblr for Angularized theme</a> uses the tag "astronomy" for creating its Hero Panel, with six Posts format. This means that the 6 most recent posts tagged with the "#astronomy" tag will show up here.</p>
+			      	<p><img class="truesize" src="images/hero_options.jpg"></p>
+
+			    	<h2 id="hero_tag_info">Choosing the Hero Tag</h2>
+			    	<section>
+				      	<p>You can choose the tag you want by simply defining it under the <a href="#hero_tag_option">"Hero Tag" Option</a>.</p>
+			      	</section>
+			      	
+			      	<h2 id="hero_format_info">Choosing the Layout Format</h2>
+			      	<section>
+				      	<p>You can choose the Hero Panel Layout Format by simply typing "4", "5", or "6" under the <a href="#hero_format_option">"Hero Format" Option</a>.</p>
+				      	<p>The hero panel will display 4, 5, or even 6 posts tagged with the tag you choose.</p>
+				      	<p>The six-post layout of the Hero Panel.</p>
+				      	<img src="images/hero-6.jpg">
+				      	<p>The five-post layout of the Hero Panel.</p>
+				      	<img src="images/hero-5.jpg">
+				      	<p>The four-post layout of the Hero Panel.</p>
+				      	<img src="images/hero-4.jpg">
+				    </section>  		
+		      	</section>
+		    </article>
+		  	<hr></hr>
+
+		  	<article id="featured_panel">
+		    	<h1>The Featured Panel</h1>
+		    	<section>
+		    		<p>The Featured Panel offers an additional way to "pin" down some of your most recent posts tagged with the tag of your choice.
+		    			Use it for bringing the focus of your viewers to events happening soon, announcements or a category of general interest.</p>
+		    		<img class="truesize" src="images/features.jpg">
+
+		    		<h2 id="featured_tag_info">Choosing the Featured Tag</h2>
+		    		<p>The Featured Panel follows the logic of the <a href="#hero_panel">Hero Panel</a>, so all you need to do is simply set the tag of your choice to the <a href="#featured_fomat_option"><strong>"Featured Tag"</strong></a> option.Check <a target="_blank" href="https://www.tumblr.com/docs/en/using_tags#how">here</a> if you want to learn how to tag your Posts.</p>
+
+		    		<h2 id="featured_format_info">Choosing the Layout Format</h2>
+		    		<p>You can choose the Featured Panel Layout Format by simply typing "1", "2", or "3" under the <a href="#featured_format_option">"Featured Format" Option</a>.</p>
+		    		<p>The one-post layout of the Featured Panel.</p>
+				    <img src="images/features-3.jpg">
+				    <p>The two-posts layout of the Featured Panel.</p>
+				    <img src="images/features-2.jpg">
+				    <p>The three-post layout of the Featured Panel.</p>
+				    <img src="images/features-1.jpg">
+		    	</section>
+		    </article>
+			<hr></hr>
+
+		    <article id="article_aggregator">
+		    	<h1>The Article Aggregator</h1>
+		    	<section>
+		    		<p>One of the most amazing features of the Angularized theme is its ability to aggregate the Posts of your Tumblr blog, based on the "active tag" of the current Post a user is browsing.</p>
+		    		<p>On the Home Page, this feature is behaving differently than what it does on a Post-specific Page.</p>
+		    		<p>You can control the Hover State of an aggegated article Box, deciding whether to show or hide more info relative to that Post by defining the state of the <a href="#showtextonhover_meta"><strong>"Show Text on Hover"</strong></a> option.</p>
+		    		<img class="truesize" src="images/related2.jpg">
+		    		<p>If you want to give more visibility to this great feature, then go ahead and activate the <a href="#fix_more_posts_meta"><strong>"Fix More Posts Button"</strong></a> option : This action will make sure the Aggregator will always "stick" on the user's screen!</p>
+		    		<p>The <a href="#showmorepostsText_meta"><strong>"Show More Posts Text"</strong></a> option will set the text of the Aggregator button on a Post-specific page, while the <a href="#showmorepostsHomeText_meta"><strong>"Show More Posts Home Text"</strong></a> will define the text of the Aggregator button for the Home Page View.</p>
+		    		<img class="truesize" src="images/related3.jpg">
+
+		    		<h2>Home Page feature : Showing all posts</h2>
+		    		<p>On the Home Page, the Posts aggregator will retreive every Post in your Blog, in chunks of 12 posts each time it is pressed, creating a grid under a "User-Triggered Infinite Scroll" logik, starting from the most recent Posts. This is a great way for the User to check out just about everything that's going on in your blog, without even having to refresh the Page! </p>
+		    		<img src="images/related1.jpg">
+		    		
+		    		<h2 id="active_tag">Post-Specific Page : Aggregating Posts based on the article's "Active Tag"</h2>
+		    		<p>Based on the <strong>Tag set for each Navigation Sub-level Menu Item</strong>, the Article Aggregator will filter out the Posts of your Blog, showing only the posts that contain the tag of the active category. This feature helps the user to stay focused and continue reading Articles that are related to the current choice.</p>
+		    		<p>The "Active Tag" for each menu item can be set by the relative <a href="#menuparams">"MenuItemXX TagX"</a> option for that menu item.</p>
+		    		<p>The Image below shows how the Article Aggegator behave when we click on "Galaxies" Menu Item on the <a target="_blank" href="http://angularized.tumblr.com/post/28786392046">Demo Website</a>: In this case, we have set the <strong><a href="#menu_item_01-04_params">"MenuItem01 tag2"</a></strong> option to "galaxy", thus configuring the Article Aggegator to filter out all Posts that contain that tag.</p>
+		    		<img src="images/related4.jpg">
+
+
+				</section>
+		    </article>
+		    <hr></hr>
+		      
+		    <article id="mobile">  
+		      <h2>Mobile View</h2>
+		      <section>
+		      	<p>So you've downloaded and installed your new Tumblr theme and you want to get rid of the boring default Tumblr mobile layout. OK so what you need to do first is make sure your in the Customise screen. Scroll down and click on the 'Advanced' button. This drops down some more options. Simply untick the 'Use optimized mobile layout' option and hit the green Save button.</p>
+		      	
+		      	<img src="images/mobile_view.jpg" />
+		      	
+		      	<p>And... YOUR DONE! Now go and enjoy your nice new mobile friendly blog.</p>
+		      </section>
+		    </article>
+		    <hr></hr>
+		    
+		    <article id="options">
+		        <h1>Theme Options</h1>
+		      <section>
+		        <p>Below is a list of ALL the theme options added into this theme. Customise these options for a unique version of the Angularized theme.</p>
+		        
+		        <h3>Colors</h3>
+		        <table>
+		        	<th>Theme Option</th>
+		        	<th>Description</th>
+		        	<th>Default Value</th>
+		        	<tr>
+		        		<td>Theme Color</td>
+		        		<td>Change the theme main color. Influences, links, button, inputs and just about anything that has a color on the GUI.</td>
+		        		<td>#9C3134</td>
+		        	</tr>
+		        	<tr>
+		        		<td>Theme Hover Color</td>
+		        		<td>Change the theme Hover color. Influences, links, button, inputs and just about anything that has a color on the GUI.</td>
+		        		<td>#C43239</td>
+		        	</tr>
+		        </table>
+		        
+		        <h3>Tick Box Options</h3>
+		        <table>
+		        	<th>Theme Option</th>
+		        	<th>Description</th>
+		        	<th>Default Value</th>
+		        	<tr>
+		        		<td id="fix_more_posts_meta">Fix "More Posts" Button</td>
+		        		<td>Make the "More Posts" Button sticky so that it doesn't scroll.Check <a href="article_aggregator">The Article Aggregator</a> for more info.</td>
+		        		<td>true</td>
+		        	</tr>
+		        	<tr>
+		        		<td id="showtextonhover_meta">Show Text On Hover</td>
+		        		<td>Show or hide text information of the retreived Posts, when hovering the elements.Check <a href="article_aggregator">The Article Aggregator</a> for more info</td>
+		        		<td>true</td>
+		        	</tr>
+		        	<tr id="showmenu_meta">
+		        		<td>Show MenuItem00</td>
+		        		<td>Show / hide the first Navigation Tab. Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td>true</td>
+		        	</tr>
+		        	<tr>
+		        		<td>Show MenuItem01</td>
+		        		<td>Show / hide the second Navigation Tab. Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td>true</td>
+		        	</tr>
+		        	<tr>
+		        		<td>Show MenuItem02</td>
+		        		<td>Show / hide the third Navigation Tab. Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td>true</td>
+		        	</tr>
+		        	<tr>
+		        		<td>Show MenuItem03</td>
+		        		<td>Show / hide the fourth Navigation Tab. Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td>true</td>
+		        	</tr>
+		        	<tr>
+		        		<td>Show MenuItem04</td>
+		        		<td>Show / hide the fifth Navigation Tab. Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td>true</td>
+		        	</tr>
+		        	<tr>
+		        		<td>Show MenuItem05</td>
+		        		<td>Show / hide the sixth Navigation Tab. Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td>true</td>
+		        	</tr>
+		        	<tr>
+		        		<td>Show MenuItem06</td>
+		        		<td>Show / hide the seventh Navigation Tab. Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td>true</td>
+		        	</tr>
+		        </table>
+		        
+		        <h3>Upload Images</h3>
+		        <table>
+		        	<th>Theme Option</th>
+		        	<th>Description</th>
+		        	<th>Default Value</th>
+		        	<tr>
+		        		<td>Logo</td>
+		        		<td>Upload your logo for the header.</td>
+		        		<td></td>
+		        	</tr>
+		        </table>
+		        
+		        <h3>Text Inputs</h3>
+		        <table>
+		        	<th>Theme Option</th>
+		        	<th>Description</th>
+		        	<th>Default Value</th>
+					<tr>
+		        		<td id="blog_address">Logo Alt</td>
+		        		<td>Define the title of your logo shown on the header.</td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="blog_address">Logo Height</td>
+		        		<td>Define the height of your logo shown on the header, in pixels. For taking care the retina screens, you may want to set this to half the value of the logo's natural height (example: For an image of 128px of height, set the "Logo Height" option to "64px".</td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="blog_address">Blog Address</td>
+		        		<td>Define the content Source for your Blog. Example: 'scipsy.tumblr.com' , or 'elettraministeri.tumblr.com'. </br><b>Do NOT use any 'http://' or 'wwww' prefix before the URL.</b></br><a href="#blog_address_info">Check "Define The Content Source" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="hero_fomat_option">Hero Format</td>
+		        		<td>simply type '4' , '5', or '6' for configuring one of the available layouts for the Hero Panel.
+		        			<a href="#hero_tag_info">Check "Choosing the Hero Tag" for more info.</a></td>
+		        		<td>6</td>
+		        	</tr>
+		        	<tr>
+		        		<td id="hero_tag_option">Hero Tag</td>
+		        		<td>Insert the tag you want for populating the Hero Panel on the Home Page.
+		      			<a href="#hero_format_info">Check "Choosing the Layout Format" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="featured_fomat_option">Featured Format</td>
+		        		<td>simply type '1' , '2', or '3' for configuring one of the available layouts for the Hero Panel.
+		        			<a href="#featured_tag_info">Check "Choosing the Hero Tag" for more info.</a></td>
+		        		<td>3</td>
+		        	</tr>
+		        	<tr>
+		        		<td id="featured_format_option">Featured Tag</td>
+		        		<td>Insert the tag you want for populating the Featured Panel on the Home Page.
+		      			<a href="#featured_tag_info">Check "Choosing the Layout Format" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="calltoActionText_meta">Call to Action Text</td>
+		        		<td>Controls the text of the button appearing below the text of every post.
+		      			<a href="#cta_info">Check "Call to Action Button" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="calltoActionLink_meta">Call to Action Link</td>
+		        		<td>Controls the link of the button appearing below the text of every post.
+		      			<a href="#cta_info">Check "Call to Action Button" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="backtostoreText_meta">Back to Store Text</td>
+		        		<td>Controls the text of the button appearing on the right side of the Header Area.
+		      			<a href="#back_to_store_info">Check "Back to Store Button" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="backtostoreLink_meta">Back to Store Link</td>
+		        		<td>Controls the link of the button appearing on the right side of the Header Area.
+		      			<a href="#back_to_store_info">Check "Back to Store Button" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="showmorepostsText_meta">Show More Posts Text</td>
+		        		<td>Define the text of the Aggregator button for the Specific (permalink) Page View.N.B. for those pages, after the text you define, the "Active Tag" of the page appears automatically. 
+		      			Check <a href="#article_aggregator">The Article Aggregator</a> for more info.</td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="showmorepostsHomeText_meta">Show More Posts Home Text</td>
+		        		<td>Define the text of the Aggregator button for the Home Page View.
+		      			Check <a href="#article_aggregator">The Article Aggregator</a> for more info.</td>
+		        		<td></td>
+		        	</tr>
+		        	<tr id="showmenu_parent_meta">
+		        		<td id="menuitem00title0">MenuItem00 title0</td>
+		        		<td>Define the text for the first Menu Item Parent.
+		      			Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="menuitem01title0">MenuItem01 title0</td>
+		        		<td>Define the text for the second Menu Item Parent.
+		        			<p id="menuparams">Sublevel Menu items : 
+		        				<ul>
+		        				<li>Title: <strong>MenuItem01 title1</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem01 id1</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem01 tag1</strong></li>
+		        				<li>Title: <strong>MenuItem01 title2</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem01 id2</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem01 tag2</strong></li>
+		        				<li>Title: <strong>MenuItem01 title3</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem01 id3</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem01 tag3</strong></li>
+		        				<li>Title: <strong>MenuItem01 title4</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem01 id4</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem01 tag4</strong></li>
+		        				</ul>
+		        		</p>
+		      			Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="menuitem02title0">MenuItem02 title0</td>
+		        		<td>Define the text for the third Menu Item Parent.
+		        			<p>Sublevel Menu items : 
+		        				<ul>
+		        				<li>Title: <strong>MenuItem02 title1</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem02 id1</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem02 tag1</strong></li>
+		        				<li>Title: <strong>MenuItem02 title2</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem02 id2</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem02 tag2</strong></li>
+		        				<li>Title: <strong>MenuItem02 title3</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem02 id3</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem02 tag3</strong></li>
+		        				<li>Title: <strong>MenuItem02 title4</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem02 id4</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem02 tag4</strong></li>
+		        				</ul>
+		      			Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="menuitem03title0">MenuItem03 title0</td>
+		        		<td>Define the text for the fourth Menu Item Parent.
+		        			<p>Sublevel Menu items : 
+		        				<ul>
+		        				<li>Title: <strong>MenuItem03 title1</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem03 id1</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem03 tag1</strong></li>
+		        				<li>Title: <strong>MenuItem03 title2</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem01 id2</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem03 tag2</strong></li>
+		        				<li>Title: <strong>MenuItem03 title3</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem03 id3</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem03 tag3</strong></li>
+		        				<li>Title: <strong>MenuItem03 title4</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem03 id4</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem03 tag4</strong></li>
+		        				</ul>
+		      			Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="menuitem04title0">MenuItem04 title0</td>
+		        		<td>Define the text for the fifth Menu Item Parent.
+		        			<p>Sublevel Menu items : 
+		        				<ul>
+		        				<li>Title: <strong>MenuItem04 title1</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem04 id1</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem04 tag1</strong></li>
+		        				<li>Title: <strong>MenuItem04 title2</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem04 id2</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem04 tag2</strong></li>
+		        				<li>Title: <strong>MenuItem04 title3</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem04 id3</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem04 tag3</strong></li>
+		        				<li>Title: <strong>MenuItem04 title4</strong>. Define <a href="#menu_item_01-04_params">the link</a> by using the <strong>MenuItem04 id4</strong> and the <a href="#active_tag">Active Tag</a> by using the <strong>MenuItem04 tag4</strong></li>
+		        				</ul>
+		      			Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="menuitem05title0">MenuItem05 title0</td>
+		        		<td>Define the text for the sixth Menu Item Parent.
+		      			Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="menuitem05type">MenuItem05 Type</td>
+		        		<td>The Fifth Menu Item retreives the four latest posts of the Type you will define. You can type anything from "text", "photo", "quote", "link", "chat", "audio", "video" or "answer".
+		      			Check <a href="#menu_item_05">Menu Item 05</a> for more info.</td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="menuitem06title0">MenuItem06 title0</td>
+		        		<td>Define the text for the Last (seventh) Menu Item Parent.
+		      			Check <a href="#root_lvl_conf">Root Level Configuration</a> for more info.</td>
+		        		<td></td>
+		        	</tr>
+		        	
+		        	<tr>
+		        		<td id="menuitem06tag">MenuItem06 Tag</td>
+		        		<td>The Sixth Menu Item retreives the four latest posts that contain the tag you define here. 
+		      			Check <a href="#menu_item_06">Menu Item 06</a> for more info.</td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="disqus_meta">Disqus</td>
+		        		<td>Set up the commenting system on the posts permalink pages
+		      			<a href="#disqus_info">Check "Disqus Integration" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="mailchimp_usrname_meta">Mailchimp username</td>
+		        		<td>You need to configure the mailchimp username for the Newsletter field to show up on the footer.
+		      			<a href="#mailchimp_info">Check "Mailchimp Integration" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="mailchimp_dc_meta">Mailchimp DC</td>
+		        		<td>You need to configure the mailchimp DC for the Newsletter field to show up on the footer.
+		      			<a href="#mailchimp_info">Check "Mailchimp Integration" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="mailchimp_usrhash_meta">Mailchimp userHash</td>
+		        		<td>You need to configure the mailchimp userHash for the Newsletter field to show up on the footer.
+		      			<a href="#mailchimp_info">Check "Mailchimp Integration" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="mailchimp_id_meta">Mailchimp ID</td>
+		        		<td>You need to configure the mailchimp username for the Newsletter field to show up on the footer.
+		      			<a href="#mailchimp_info">Check "Mailchimp Integration" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="fb_meta">Facebook</td>
+		        		<td>Fill this with the URL of your Facebook page, to have a link shown on the footer.
+		      			<a href="#social_info">Check "Social Share Buttons" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="ig_meta">Instagram</td>
+		        		<td>Fill this with the URL of your Instagram page, to have a link shown on the footer.
+		      			<a href="#social_info">Check "Social Share Buttons" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="pint_meta">Pinterest</td>
+		        		<td>Fill this with the URL of your Pinterest page, to have a link shown on the footer.
+		      			<a href="#social_info">Check "Social Share Buttons" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="twitter_meta">Twitter</td>
+		        		<td>Fill this with the URL of your Twitter page, to have a link shown on the footer.
+		      			<a href="#social_info">Check "Social Share Buttons" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td id="etsy_meta">Etsy</td>
+		        		<td>Fill this with the URL of your Etsy store, to have a link shown on the footer.
+		      			<a href="#social_info">Check "Social Share Buttons" for more info.</a></td>
+		        		<td></td>
+		        	</tr>
+
+		        	<tr>
+		        		<td id="vendors_meta">Vendors Source</td>
+		        		<td>Define the path for the Vendors Source.Leave unchanged for making sure you ALWAYS have the latest version! 
+		      			<a href="#install_vendors">Check "Uploading the Vendors Javascript file" for more info.</a></td>
+		        		<td>http://feddyups.github.io/angularized/angularized_vendors.js</td>
+		        	</tr>
+		        	<tr>
+		        		<td id="css_meta">CSS Source</td>
+		        		<td>Define the path for the CSS Source.Leave unchanged for making sure you ALWAYS have the latest version! 
+		      			<a href="#install_css">Check "Installing the CSS source" for more info.</a></td>
+		        		<td>http://feddyups.github.io/angularized/angularized.css</td>
+		        	</tr>
+		        	<tr>
+		        		<td id="core_meta">Core Source</td>
+		        		<td>Define the path for the Core Source.Leave unchanged for making sure you ALWAYS have the latest version! 
+		      			<a href="#install_core">Check "Installing the Core Javascript source" for more info.</a></td>
+		        		<td>http://feddyups.github.io/angularized/angularized.js</td>
+		        	</tr>
+	        	</table>
+		      </section>
+		    </article>
+		    <hr></hr>
+		    
+		    <article id="changelog">
+		        <h1>Changelog</h1>
+		      <section>
+		       
+		        
+		        <!-- <h4>19.06.2016 - v1.0</h4>
+		        <ul>
+		        	<li><span class="new">NEW</span> </li>
+		        	<li><span class="fix">FIX</span> </li>
+		        	<li><span class="update">UPDATE</span> </li>
+		        	
+		        </ul>-->
+		        
+		        
+		        
+		        <h4>19.06.2016 - v1.0</h4>
+		        Initial Release
+		      </section>
+		    </article>
+		    <hr></hr>
+		    
+		    <article id="rating">
+		        <h1>Rating the Theme</h1>
+		      <section>
+		        <p>It would be awesome if you could rate the theme for me. If you feel the theme deserves less than 5 stars please contact me before rating and I will try to improve your experience with the theme.</p>
+		      </section>
+		    </article>
+		    <hr></hr>
+		    
+		    <article id="support">
+		        <h1>Need some extra help?</h1>
+		      <section>
+		        <p>If you need a helping hand or would like to customise the theme then shoot me an email at <a href="mailto:feddyups@gmail.com">support@wildemedia.co.uk</a></p>
+		      </section>
+		    </article>
+	    
+	    </div>
+	        
+	    <footer>
+	    	<p><img src="images/AngularISED_ICON.jpg" /></p>
+	    	<p>Angularized Tumblr theme Help Documentation v1.0</p>
+	    </footer>
+    </div>
+    
+    <div id="scroll_top">
+    	<a href="#"><i class="icon-up-bold"></i> Scroll To Top <i class="icon-up-bold"></i></a>
+    </div>
+    
+  </body>	
+</html>
